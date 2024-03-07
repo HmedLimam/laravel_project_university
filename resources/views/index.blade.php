@@ -6,11 +6,11 @@
 <div class="container mt-5">
     <h1>Liste des films</h1>
     <a class="btn btn-info text-white" href="{{route('films.create')}}">Créer un Film</a><br>
-    <form method="get" action="{{route('films.find')}}">
-        <input name="search" placeholder="search">
-        <button>Search</button>
+    <form class="my-3 d-flex gap-2" method="get" action="{{route('films.find')}}">
+        <input class="form-control flex" name="search" placeholder="search">
+        <button class="btn btn-primary flex">Search</button>
     </form>
-    <select onchange="window.location.href = this.value">
+    <select onchange="window.location.href = this.value" class="form-select">
         @isset($categories)
         @foreach ($categories as $cat)
         @if(isset($nom))
