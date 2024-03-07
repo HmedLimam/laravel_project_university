@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Models\Film;
 use App\Models\Categorie;
 use App\Http\Resources\Film as FilmResource;
+use App\Http\Resources\FilmCollection;
 
 class FilmController extends Controller
 {
@@ -16,7 +17,7 @@ class FilmController extends Controller
     public function index()
     {
         $films = Film::all();
-        return $films;
+        return new FilmCollection($films);
     }
 
     /**
